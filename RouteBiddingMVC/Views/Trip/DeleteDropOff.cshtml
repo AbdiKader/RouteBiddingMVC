@@ -1,0 +1,41 @@
+@model RouteBiddingMVC.Models.TripDropOff
+
+@{
+    ViewData["Title"] = "DeleteDropOff";
+}
+
+<h2>DeleteDropOff</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TripDropOff</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TripID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TripID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Appointment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Appointment)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DropOffID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DropOffID)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteDropOff">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

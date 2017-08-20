@@ -1,0 +1,83 @@
+@model RouteBiddingMVC.ViewModels.AddDropOffViewModel
+
+
+
+<h2>Add</h2>
+
+<form asp-action="Add" method="post">
+    <div class="form-horizontal">
+        <h4>Add a customer</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+        <div class="form-group">
+            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Address" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="City" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="State" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Zip" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Zip" class="form-control" />
+                <span asp-validation-for="Zip" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Appointment" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Appointment" class="form-control" />
+                <span asp-validation-for="Appointment" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Notes" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="CustomerID" asp-items="Model.Customers" class="form-control"></select>
+                <span asp-validation-for="CustomerID" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,33 @@
+@model RouteBiddingMVC.ViewModels.ViewDropOffViewModel
+
+@{
+    ViewData["Title"] = "Customer List";
+}
+
+<h2>Delivery List</h2>
+
+<p><a asp-action="AddDropOff" asp-route-id="@Model.Trip.ID">Add Customer</a></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Stops) {
+        <tr>
+            <td>@item.DropOff.Name</td>
+            <td>@item.DropOff.Address <br />@item.DropOff.City, @item.DropOff.State, @item.DropOff.Zip<br /></td>
+            <td>@item.DropOff.Notes</td>
+            
+            
+        </tr>
+        <tr>
+            
+        </tr>
+
+}
+    </tbody>
+</table>

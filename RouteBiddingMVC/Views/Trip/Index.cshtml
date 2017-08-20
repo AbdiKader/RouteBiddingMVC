@@ -1,0 +1,67 @@
+@model IEnumerable<RouteBiddingMVC.Models.Trip>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Add">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dispatch)
+                </th>
+                <th>
+                    Allocated Time
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Day)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Reuturn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pay)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dispatch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AllocatedHours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reuturn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pay)
+            </td>
+            <td>
+                <a class="btn-info" asp-action="ViewTripDropOff" asp-route-id="@item.ID">Trip Details</a>
+                <a class="btn-danger" asp-action="AddDropOff" asp-route-id="@item.ID">Add Dropoff</a>
+                <a class="btn-danger" asp-action="DeleteTrip" asp-route-id="@item.ID">Delete </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
